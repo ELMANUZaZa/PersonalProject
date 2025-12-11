@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ramo estilo Minecraft</title>
+  <style>
+    body {
+      background: #cce7ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+      animation: aparecer 2s ease-in-out;
+    }
+    .ramo {
+      display: grid;
+      grid-template-columns: repeat(7, 20px);
+      grid-auto-rows: 20px;
+      gap: 2px;
+      margin-top: 10px;
+    }
+    .pixel {
+      width: 20px;
+      height: 20px;
+    }
+    .flor-blanca { background: #ffffff; }
+    .flor-amarilla { background: #ffff00; }
+    .flor-roja { background: #ff0000; }
+    .flor-rosa { background: #ff69b4; }
+    .flor-azul { background: #1e90ff; }
+    .flor-morada { background: #9932cc; }
+    .tallo { background: #228B22; }
+    .maceta-clara { background: #a0522d; }
+    .maceta-oscura { background: #8b4513; }
+    .espacio { background: transparent; }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🌸 Tu ramo estilo Minecraft 🌸</h1>
+  <div class="ramo">
+    <!-- fila 1: flores -->
+    <div class="espacio"></div><div class="flor-blanca"></div><div class="flor-roja"></div><div class="flor-morada"></div><div class="flor-amarilla"></div><div class="flor-rosa"></div><div class="flor-azul"></div>
+    <!-- fila 2: tallos -->
+    <div class="espacio"></div><div class="tallo"></div><div class="tallo"></div><div class="tallo"></div><div class="tallo"></div><div class="tallo"></div><div class="tallo"></div>
+    <!-- fila 3: maceta clara -->
+    <div class="maceta-clara"></div><div class="maceta-clara"></div><div class="maceta-clara"></div><div class="maceta-clara"></div><div class="maceta-clara"></div><div class="maceta-clara"></div><div class="maceta-clara"></div>
+    <!-- fila 4: maceta oscura -->
+    <div class="maceta-oscura"></div><div class="maceta-oscura"></div><div class="maceta-oscura"></div><div class="maceta-oscura"></div><div class="maceta-oscura"></div><div class="maceta-oscura"></div><div class="maceta-oscura"></div>
+  </div>
+</body>
+</html>

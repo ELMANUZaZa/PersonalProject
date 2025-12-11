@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz cumpleaños!</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #ffcc70 , #ff7eb3);
+            color: #fff;
+            padding: 50px;
+        }
+        h1{
+            font-size: 3em;
+            margin-bottom: 20px;  
+        }
+        p{
+            font-size: 1.5em;
+        }
+        .btn{
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 25px;
+            background-color: #fff;
+            color: #ff7eb3;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+        .btn:hover{
+            background-color: #ffe6f0;
+        }
+        @keyframes fadeIn {
+            from{ opacity: 0; transform: translate(-20px);}
+            to{ opacity: 1; transform: translate(0);}
+        }
+        @keyframes pulse{
+            0%{ transform: scale(1);}
+            50%{ transform: scale(1.1);}
+            100%{ transform: scale(1);}
+        }
+        .globo{
+            position: absolute;
+            bottom: -150px;
+            width: 80px;
+            animation: subir 10 infinite;
+        }
+        @keyframes subir{
+            0%{ bottom: -150px;}
+            100%{ bottom: 100%}
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Feliz cumpleaños!</h1>
+    <p>Espero que tengas un excelente día rodeada de la gente que te quiere y que te la pases increible 🥳</p>
+
+    <!-- Contador regresivo -->
+     <div class="contador" id="contador"></div>
+
+    <!-- Boton para mandar a ramo-->
+
+    <a class="btn" href="ramo.html">Ver ramo estilo Minecraft 🌸</a>
+
+
+    <!-- Globos animados -->
+     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Balloon_icon.svg/1024px-Balloon_icon.svg.png" class="globo" style="left:10%; animation-duration: 10s;">
+     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Balloon_icon.svg/1024px-Balloon_icon.svg.png" class="globo" style="left:10%; animation-duration: 14s;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Balloon_icon.svg/1024px-Balloon_icon.svg.png" class="globo" style="left:30%; animation-duration: 18s;">
+
+    <script>
+    const fechaCumple = new Date("December 11, 2024 00:00:00").getTime();
+
+    const intervalo = setInterval(() => {
+        const ahora = new Date().getTime();
+        const diferencia = fechaCumple - ahora;
+
+        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+        document.getElementById("contador").innerHTML =
+            dias + "d " + horas + "h " + minutos + "m " + segundos + "s ";
+
+        if (diferencia < 0) {
+            clearInterval(intervalo);
+            document.getElementById("contador").innerHTML = "¡Feliz Cumpleaños! 🎂🎈";
+        }
+    }, 1000);
+</script>
+</body>
+</html>
